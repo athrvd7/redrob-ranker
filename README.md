@@ -82,6 +82,9 @@ Installed dependencies are:
 
 ## 2. Run the interactive TUI
 
+<img width="801" height="463" alt="tui-redrob" src="https://github.com/user-attachments/assets/310976cf-98c5-4e16-b874-a0aa2e769304" />
+
+
 If you want a guided terminal interface for common workflows, run:
 
 ```sh
