@@ -1,0 +1,8 @@
+candidates.jsonl
+candidate_features.npz
+*.npz
+__pycache__/
+*.pyc
+.env
+dist/
+.DS_Store

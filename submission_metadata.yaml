@@ -1,0 +1,51 @@
+team_name: "TODO: team_name"
+
+primary_contact:
+  name: "TODO: contact_name"
+  email: "TODO: contact_email"
+  phone: "TODO: contact_phone"
+
+team_members:
+  - name: "TODO: contact_name"
+    email: "TODO: contact_email"
+    role: "TODO"
+
+github_repo: "TODO: github_url"
+sandbox_link: "TODO"
+reproduce_command: "python precompute.py --candidates ./candidates.jsonl --out ./candidate_features.npz && python rank.py --candidates ./candidates.jsonl --features ./candidate_features.npz --out ./submission.csv"
+
+compute:
+  platform: "Local CPU-only environment"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11"
+  os: "macOS/Linux"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 0
+
+ai_tools_declared:
+  - "Codex"
+ai_tools_used:
+  - "Codex"
+ai_usage_summary: |
+  Used Codex to draft documentation and repository metadata. No candidate data
+  was sent to external model APIs by the ranking code.
+
+methodology_summary: |
+  Deterministic, CPU-only ranker for the Senior AI Engineer JD. The scoring
+  model combines JD-critical skill match, career quality, seniority fit,
+  location fit, and availability, then applies a honeypot penalty for impossible
+  or suspicious profiles. Skill evidence is checked in both skills arrays and
+  career descriptions to avoid keyword stuffing. Precompute streams the full
+  JSONL file into compact NumPy feature arrays; rank loads those arrays, selects
+  the top 100, streams candidate records for reasoning, and writes a validated
+  CSV without GPU, network, or LLM calls.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
